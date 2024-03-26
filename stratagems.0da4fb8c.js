@@ -794,6 +794,7 @@ const Code = ({ code, onComplete })=>{
         } else {
             setUserInput([]);
             setInvalid(true);
+            setTimeout(()=>setInvalid(false), 500);
         }
     }, [
         userInput
@@ -814,17 +815,17 @@ const Code = ({ code, onComplete })=>{
                 "data-invalid": invalid || undefined,
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _arrowDefault.default), {}, void 0, false, {
                     fileName: "src/game/stratagems/code/code.component.tsx",
-                    lineNumber: 61,
+                    lineNumber: 62,
                     columnNumber: 11
                 }, undefined)
             }, `${input}-${index}`, false, {
                 fileName: "src/game/stratagems/code/code.component.tsx",
-                lineNumber: 55,
+                lineNumber: 56,
                 columnNumber: 9
             }, undefined))
     }, void 0, false, {
         fileName: "src/game/stratagems/code/code.component.tsx",
-        lineNumber: 53,
+        lineNumber: 54,
         columnNumber: 5
     }, undefined);
 };
