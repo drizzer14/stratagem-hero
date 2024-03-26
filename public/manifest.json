@@ -1,0 +1,15 @@
+{
+  "name": "Stratagem Hero",
+  "short_name": "Stratagem Hero",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#000",
+  "description": "Helldivers 2 Stratagem Hero Online",
+  "icons": [
+    {
+      "src": "images/logo.svg",
+      "sizes": "any",
+      "type": "image/svg"
+    }
+  ]
+}

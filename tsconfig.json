@@ -1,0 +1,42 @@
+{
+  "include": ["src"],
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "esnext",
+    "moduleResolution": "node",
+
+    "lib": ["esnext", "dom"],
+
+    "jsx": "react-jsxdev",
+    "resolveJsonModule": true,
+    "noEmit": true,
+
+    "rootDir": "src",
+    "baseUrl": "src",
+
+    "allowJs": true,
+    "noUnusedLocals": true,
+    "pretty": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "stripInternal": true,
+    "alwaysStrict": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "noEmitOnError": true,
+    "noErrorTruncation": true,
+    "noImplicitAny": true,
+    "allowSyntheticDefaultImports": true,
+    "noFallthroughCasesInSwitch": false,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noStrictGenericChecks": false,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedParameters": true,
+    "preserveValueImports": false,
+    "suppressExcessPropertyErrors": false,
+    "suppressImplicitAnyIndexErrors": false,
+    "useUnknownInCatchVariables": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}
