@@ -17,10 +17,11 @@ const normalizeKey = (key: (typeof Key)[number]): (typeof Key)[number] => {
     .otherwise(() => key);
 };
 
-const Code: FC<{ code: string; onComplete: () => void }> = ({
-  code,
-  onComplete,
-}) => {
+const Code: FC<{
+  code: string;
+  onError: () => void;
+  onComplete: () => void;
+}> = ({ code, onError, onComplete }) => {
   const [userInput, setUserInput] = useState<string[]>([]);
 
   const [invalid, setInvalid] = useState(false);
@@ -35,6 +36,7 @@ const Code: FC<{ code: string; onComplete: () => void }> = ({
       } else {
         setUserInput([]);
         setInvalid(true);
+        onError();
         setTimeout(() => setInvalid(false), 500);
       }
     },

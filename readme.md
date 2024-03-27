@@ -12,8 +12,8 @@ The intent was to replicate it as closely as possible in looks and behaviour.
 - Visit the [website](https://drizzer14.github.io/stratagem-hero).
 - Press any Stratagem Input (WASD or arrow keys) to start the game.
 - All stratagems from the Helldivers 2 game are evenly divided into rounds of 8 stratagems per round – you need to input their codes as quickly as possible to advance further until either no stratagems left, or the timer is up.
-- Each correct stratagem adds its code length to your score and grants you additional time. E.g., correctly entering Reinforce stratagem code (⬆️⬇️➡️⬅️⬆️) will grant you 5 points and some more time.
-- Each error forces you to start entering the code from the beginning.
+- Each correct stratagem increases your score and grants you additional time. Score depends on code's complexity, how fast you've entered it and how many errors you've made.
+- Each error forces you to start entering the code from the beginning and gives penalty to this stratagem's score.
 - In the end your score will be saved and displayed along with your previous high score.
 
 ![Stratagem Hero](https://raw.githubusercontent.com/drizzer14/stratagem-hero/main/assets/preview-3.png)

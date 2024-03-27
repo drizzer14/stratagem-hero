@@ -1,4 +1,4 @@
-import { useState, FC, useRef, useMemo, useCallback } from 'react';
+import { useState, FC, useRef, useMemo, useCallback, useEffect } from 'react';
 
 import { StratagemID, stratagems } from 'entity';
 
@@ -65,6 +65,14 @@ const Stratagems: FC<{
     onComplete(score);
   }, [score]);
 
+  const [stratagemStartTime, setStratagemStartTime] = useState(Date.now());
+
+  useEffect(() => {
+    setStratagemStartTime(Date.now());
+  }, [currentStratagem.id]);
+
+  const [errorsCount, setErrorsCount] = useState(0);
+
   const onStratagemComplete = useCallback(() => {
     const isLastStratagemOfRound =
       currentStratagemIndex === currentRound.length - 1;
@@ -83,9 +91,21 @@ const Stratagems: FC<{
       }
 
       timer.emit('increase', 20.664);
-      setScore((prevScore) => prevScore + currentStratagem.code.length);
+
+      const codeLength = currentStratagem.code.length;
+      const codeWeight = new Set(currentStratagem.code).size;
+      const stratagemEndTime = Date.now();
+      const timeDiffS = (stratagemEndTime - stratagemStartTime) / 1000;
+
+      setScore(
+        (prevScore) =>
+          prevScore +
+          Math.round((codeWeight / timeDiffS) * codeLength) -
+          (errorsCount || -1),
+      );
+      setErrorsCount(0);
     }
-  }, [currentStratagemIndex, currentRoundIndex, setScore]);
+  }, [currentStratagemIndex, currentRoundIndex, stratagemStartTime, setScore]);
 
   return (
     <Styled.Container>
@@ -98,7 +118,11 @@ const Stratagems: FC<{
           currentStratagemIndex={currentStratagemIndex}
         />
 
-        <Code code={currentStratagem.code} onComplete={onStratagemComplete} />
+        <Code
+          code={currentStratagem.code}
+          onError={() => setErrorsCount(errorsCount + 1)}
+          onComplete={onStratagemComplete}
+        />
 
         <Progress onDeplete={onGameComplete} />
       </Styled.Stratagems>
