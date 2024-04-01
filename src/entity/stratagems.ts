@@ -41,11 +41,11 @@ export const stratagems = {
     title: 'Eagle Rearm',
     code: 'wwawd',
   },
-  // illumination_flare: {
-  //   id: 'illumination_flare',
-  //   title: 'Illumination Flare',
-  //   code: 'ddaa',
-  // },
+  orbital_illumination_flare: {
+    id: 'orbital_illumination_flare',
+    title: 'Orbital Illumination Flare',
+    code: 'ddaa',
+  },
   seaf_artillery: {
     id: 'seaf_artillery',
     title: 'SEAF Artillery',
@@ -226,6 +226,11 @@ export const stratagems = {
     title: 'AC-8 Autocannon',
     code: 'saswwd',
   },
+  heavy_machine_gun: {
+    id: 'heavy_machine_gun',
+    title: 'MG-206 Heavy Machine Gun',
+    code: 'sawss',
+  },
   railgun: {
     id: 'railgun',
     title: 'RS-422 Railgun',
@@ -250,6 +255,11 @@ export const stratagems = {
     id: 'arc_thrower',
     title: 'ARC-3 Arc Thrower',
     code: 'sdswaa',
+  },
+  quasar_cannon: {
+    id: 'quasar_cannon',
+    title: 'LAS-99 Quasar Cannon',
+    code: 'sswad',
   },
   jump_pack: {
     id: 'jump_pack',
